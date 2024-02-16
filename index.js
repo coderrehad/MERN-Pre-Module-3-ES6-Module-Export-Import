@@ -142,13 +142,26 @@ function ElementButton() {
     ElementMenu.appendChild(ListItem)
 }
 
+// DOM Change Attribute Value
+function changeImg() {
+    let MyImg = document.getElementById('MyImg')
+    MyImg.src="https://th.bing.com/th/id/OIG.MC3PObbEmuJhfsPJ8biQ"
+}
 
+// DOM Query Selector
+function ChangeElements() {
+    document.querySelector('#MyID').innerHTML = "h1 manipulated"
+    document.querySelector('.MyClass').innerHTML = "h2 manipulated"
+    document.querySelector('p[name="MyName"]').innerHTML = "p manipulated"
+    document.querySelector('h6').innerHTML = "h6 manipulated"
+}
 
-
-
-
-
-
-
-
-
+//  Ajax Get Request In Details
+function getRequest () {
+    let URL = "https://jsonplaceholder.typicode.com/users"
+    let Option = {method:"Get"}
+    fetch(URL,Option)
+        .then(response=>response.json())
+        .then(result=>console.log(result))
+        .catch(err=>console.log(err))
+}
